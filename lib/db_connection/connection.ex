@@ -345,9 +345,9 @@ defmodule DBConnection.Connection do
     end
   end
 
-  defp down_log(:normal), do: :nolog
-  defp down_log(:shutdown), do: :nolog
-  defp down_log({:shutdown, _}), do: :nolog
+  defp down_log(:normal), do: :log
+  defp down_log(:shutdown), do: :log
+  defp down_log({:shutdown, _}), do: :log
   defp down_log(_), do: :log
 
   defp handle_timeout(s), do: {:noreply, s}
